@@ -1,0 +1,16 @@
+site_name: PCHandbook
+site_description: 电脑配件优化手册(2019.10)
+site_author: langzaigg
+site_url: https://langzaigg.github.io/PCHandBook/
+
+repo_name: 'langzaigg/PCHandbook'
+repo_url: 'https://github.com/langzaigg/PCHandbook'
+
+theme:
+  name: material
+  language: 'zh'
+
+
+extra:
+  search:
+    language: 'jp'
