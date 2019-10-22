@@ -14,4 +14,557 @@
  * Copyright 2010, Oleg Mazko
  * http://www.mozilla.org/MPL/
  */
-!function(e,r){"function"==typeof define&&define.amd?define(r):"object"==typeof exports?module.exports=r():r()(e.lunr)}(this,function(){return function(e){if(void 0===e)throw new Error("Lunr is not present. Please include / require Lunr before this script.");if(void 0===e.stemmerSupport)throw new Error("Lunr stemmer support is not present. Please include / require Lunr stemmer support before this script.");var j,C,r;e.pt=function(){this.pipeline.reset(),this.pipeline.add(e.pt.trimmer,e.pt.stopWordFilter,e.pt.stemmer),this.searchPipeline&&(this.searchPipeline.reset(),this.searchPipeline.add(e.pt.stemmer))},e.pt.wordCharacters="A-Za-zªºÀ-ÖØ-öø-ʸˠ-ˤᴀ-ᴥᴬ-ᵜᵢ-ᵥᵫ-ᵷᵹ-ᶾḀ-ỿⁱⁿₐ-ₜKÅℲⅎⅠ-ↈⱠ-ⱿꜢ-ꞇꞋ-ꞭꞰ-ꞷꟷ-ꟿꬰ-ꭚꭜ-ꭤﬀ-ﬆＡ-Ｚａ-ｚ",e.pt.trimmer=e.trimmerSupport.generateTrimmer(e.pt.wordCharacters),e.Pipeline.registerFunction(e.pt.trimmer,"trimmer-pt"),e.pt.stemmer=(j=e.stemmerSupport.Among,C=e.stemmerSupport.SnowballProgram,r=new function(){var s,n,i,o=[new j("",-1,3),new j("ã",0,1),new j("õ",0,2)],a=[new j("",-1,3),new j("a~",0,1),new j("o~",0,2)],r=[new j("ic",-1,-1),new j("ad",-1,-1),new j("os",-1,-1),new j("iv",-1,1)],t=[new j("ante",-1,1),new j("avel",-1,1),new j("ível",-1,1)],u=[new j("ic",-1,1),new j("abil",-1,1),new j("iv",-1,1)],w=[new j("ica",-1,1),new j("ância",-1,1),new j("ência",-1,4),new j("ira",-1,9),new j("adora",-1,1),new j("osa",-1,1),new j("ista",-1,1),new j("iva",-1,8),new j("eza",-1,1),new j("logía",-1,2),new j("idade",-1,7),new j("ante",-1,1),new j("mente",-1,6),new j("amente",12,5),new j("ável",-1,1),new j("ível",-1,1),new j("ución",-1,3),new j("ico",-1,1),new j("ismo",-1,1),new j("oso",-1,1),new j("amento",-1,1),new j("imento",-1,1),new j("ivo",-1,8),new j("aça~o",-1,1),new j("ador",-1,1),new j("icas",-1,1),new j("ências",-1,4),new j("iras",-1,9),new j("adoras",-1,1),new j("osas",-1,1),new j("istas",-1,1),new j("ivas",-1,8),new j("ezas",-1,1),new j("logías",-1,2),new j("idades",-1,7),new j("uciones",-1,3),new j("adores",-1,1),new j("antes",-1,1),new j("aço~es",-1,1),new j("icos",-1,1),new j("ismos",-1,1),new j("osos",-1,1),new j("amentos",-1,1),new j("imentos",-1,1),new j("ivos",-1,8)],m=[new j("ada",-1,1),new j("ida",-1,1),new j("ia",-1,1),new j("aria",2,1),new j("eria",2,1),new j("iria",2,1),new j("ara",-1,1),new j("era",-1,1),new j("ira",-1,1),new j("ava",-1,1),new j("asse",-1,1),new j("esse",-1,1),new j("isse",-1,1),new j("aste",-1,1),new j("este",-1,1),new j("iste",-1,1),new j("ei",-1,1),new j("arei",16,1),new j("erei",16,1),new j("irei",16,1),new j("am",-1,1),new j("iam",20,1),new j("ariam",21,1),new j("eriam",21,1),new j("iriam",21,1),new j("aram",20,1),new j("eram",20,1),new j("iram",20,1),new j("avam",20,1),new j("em",-1,1),new j("arem",29,1),new j("erem",29,1),new j("irem",29,1),new j("assem",29,1),new j("essem",29,1),new j("issem",29,1),new j("ado",-1,1),new j("ido",-1,1),new j("ando",-1,1),new j("endo",-1,1),new j("indo",-1,1),new j("ara~o",-1,1),new j("era~o",-1,1),new j("ira~o",-1,1),new j("ar",-1,1),new j("er",-1,1),new j("ir",-1,1),new j("as",-1,1),new j("adas",47,1),new j("idas",47,1),new j("ias",47,1),new j("arias",50,1),new j("erias",50,1),new j("irias",50,1),new j("aras",47,1),new j("eras",47,1),new j("iras",47,1),new j("avas",47,1),new j("es",-1,1),new j("ardes",58,1),new j("erdes",58,1),new j("irdes",58,1),new j("ares",58,1),new j("eres",58,1),new j("ires",58,1),new j("asses",58,1),new j("esses",58,1),new j("isses",58,1),new j("astes",58,1),new j("estes",58,1),new j("istes",58,1),new j("is",-1,1),new j("ais",71,1),new j("eis",71,1),new j("areis",73,1),new j("ereis",73,1),new j("ireis",73,1),new j("áreis",73,1),new j("éreis",73,1),new j("íreis",73,1),new j("ásseis",73,1),new j("ésseis",73,1),new j("ísseis",73,1),new j("áveis",73,1),new j("íeis",73,1),new j("aríeis",84,1),new j("eríeis",84,1),new j("iríeis",84,1),new j("ados",-1,1),new j("idos",-1,1),new j("amos",-1,1),new j("áramos",90,1),new j("éramos",90,1),new j("íramos",90,1),new j("ávamos",90,1),new j("íamos",90,1),new j("aríamos",95,1),new j("eríamos",95,1),new j("iríamos",95,1),new j("emos",-1,1),new j("aremos",99,1),new j("eremos",99,1),new j("iremos",99,1),new j("ássemos",99,1),new j("êssemos",99,1),new j("íssemos",99,1),new j("imos",-1,1),new j("armos",-1,1),new j("ermos",-1,1),new j("irmos",-1,1),new j("ámos",-1,1),new j("arás",-1,1),new j("erás",-1,1),new j("irás",-1,1),new j("eu",-1,1),new j("iu",-1,1),new j("ou",-1,1),new j("ará",-1,1),new j("erá",-1,1),new j("irá",-1,1)],c=[new j("a",-1,1),new j("i",-1,1),new j("o",-1,1),new j("os",-1,1),new j("á",-1,1),new j("í",-1,1),new j("ó",-1,1)],l=[new j("e",-1,1),new j("ç",-1,2),new j("é",-1,1),new j("ê",-1,1)],f=[17,65,16,0,0,0,0,0,0,0,0,0,0,0,0,0,3,19,12,2],d=new C;function v(){if(d.out_grouping(f,97,250)){for(;!d.in_grouping(f,97,250);){if(d.cursor>=d.limit)return!0;d.cursor++}return!1}return!0}function p(){var e,r,s=d.cursor;if(d.in_grouping(f,97,250))if(e=d.cursor,v()){if(d.cursor=e,function(){if(d.in_grouping(f,97,250))for(;!d.out_grouping(f,97,250);){if(d.cursor>=d.limit)return!1;d.cursor++}return i=d.cursor,!0}())return}else i=d.cursor;if(d.cursor=s,d.out_grouping(f,97,250)){if(r=d.cursor,v()){if(d.cursor=r,!d.in_grouping(f,97,250)||d.cursor>=d.limit)return;d.cursor++}i=d.cursor}}function _(){for(;!d.in_grouping(f,97,250);){if(d.cursor>=d.limit)return!1;d.cursor++}for(;!d.out_grouping(f,97,250);){if(d.cursor>=d.limit)return!1;d.cursor++}return!0}function h(){return i<=d.cursor}function b(){return s<=d.cursor}function g(){var e;if(d.ket=d.cursor,!(e=d.find_among_b(w,45)))return!1;switch(d.bra=d.cursor,e){case 1:if(!b())return!1;d.slice_del();break;case 2:if(!b())return!1;d.slice_from("log");break;case 3:if(!b())return!1;d.slice_from("u");break;case 4:if(!b())return!1;d.slice_from("ente");break;case 5:if(!(n<=d.cursor))return!1;d.slice_del(),d.ket=d.cursor,(e=d.find_among_b(r,4))&&(d.bra=d.cursor,b()&&(d.slice_del(),1==e&&(d.ket=d.cursor,d.eq_s_b(2,"at")&&(d.bra=d.cursor,b()&&d.slice_del()))));break;case 6:if(!b())return!1;d.slice_del(),d.ket=d.cursor,(e=d.find_among_b(t,3))&&(d.bra=d.cursor,1==e&&b()&&d.slice_del());break;case 7:if(!b())return!1;d.slice_del(),d.ket=d.cursor,(e=d.find_among_b(u,3))&&(d.bra=d.cursor,1==e&&b()&&d.slice_del());break;case 8:if(!b())return!1;d.slice_del(),d.ket=d.cursor,d.eq_s_b(2,"at")&&(d.bra=d.cursor,b()&&d.slice_del());break;case 9:if(!h()||!d.eq_s_b(1,"e"))return!1;d.slice_from("ir")}return!0}function k(e,r){if(d.eq_s_b(1,e)){d.bra=d.cursor;var s=d.limit-d.cursor;if(d.eq_s_b(1,r))return d.cursor=d.limit-s,h()&&d.slice_del(),!1}return!0}function q(){if(!g()&&(d.cursor=d.limit,!function(){var e,r;if(d.cursor>=i){if(r=d.limit_backward,d.limit_backward=i,d.ket=d.cursor,e=d.find_among_b(m,120))return d.bra=d.cursor,1==e&&d.slice_del(),d.limit_backward=r,!0;d.limit_backward=r}return!1}()))return d.cursor=d.limit,d.ket=d.cursor,void((e=d.find_among_b(c,7))&&(d.bra=d.cursor,1==e&&h()&&d.slice_del()));var e;d.cursor=d.limit,d.ket=d.cursor,d.eq_s_b(1,"i")&&(d.bra=d.cursor,d.eq_s_b(1,"c")&&(d.cursor=d.limit,h()&&d.slice_del()))}this.setCurrent=function(e){d.setCurrent(e)},this.getCurrent=function(){return d.getCurrent()},this.stem=function(){var e,r=d.cursor;return function(){for(var e;;){if(d.bra=d.cursor,e=d.find_among(o,3))switch(d.ket=d.cursor,e){case 1:d.slice_from("a~");continue;case 2:d.slice_from("o~");continue;case 3:if(d.cursor>=d.limit)break;d.cursor++;continue}break}}(),d.cursor=r,e=d.cursor,i=d.limit,s=n=i,p(),d.cursor=e,_()&&(n=d.cursor,_()&&(s=d.cursor)),d.limit_backward=r,d.cursor=d.limit,q(),d.cursor=d.limit,function(){var e;if(d.ket=d.cursor,e=d.find_among_b(l,4))switch(d.bra=d.cursor,e){case 1:h()&&(d.slice_del(),d.ket=d.cursor,d.limit,d.cursor,k("u","g")&&k("i","c"));break;case 2:d.slice_from("c")}}(),d.cursor=d.limit_backward,function(){for(var e;;){if(d.bra=d.cursor,e=d.find_among(a,3))switch(d.ket=d.cursor,e){case 1:d.slice_from("ã");continue;case 2:d.slice_from("õ");continue;case 3:if(d.cursor>=d.limit)break;d.cursor++;continue}break}}(),!0}},function(e){return"function"==typeof e.update?e.update(function(e){return r.setCurrent(e),r.stem(),r.getCurrent()}):(r.setCurrent(e),r.stem(),r.getCurrent())}),e.Pipeline.registerFunction(e.pt.stemmer,"stemmer-pt"),e.pt.stopWordFilter=e.generateStopWordFilter("a ao aos aquela aquelas aquele aqueles aquilo as até com como da das de dela delas dele deles depois do dos e ela elas ele eles em entre era eram essa essas esse esses esta estamos estas estava estavam este esteja estejam estejamos estes esteve estive estivemos estiver estivera estiveram estiverem estivermos estivesse estivessem estivéramos estivéssemos estou está estávamos estão eu foi fomos for fora foram forem formos fosse fossem fui fôramos fôssemos haja hajam hajamos havemos hei houve houvemos houver houvera houveram houverei houverem houveremos houveria houveriam houvermos houverá houverão houveríamos houvesse houvessem houvéramos houvéssemos há hão isso isto já lhe lhes mais mas me mesmo meu meus minha minhas muito na nas nem no nos nossa nossas nosso nossos num numa não nós o os ou para pela pelas pelo pelos por qual quando que quem se seja sejam sejamos sem serei seremos seria seriam será serão seríamos seu seus somos sou sua suas são só também te tem temos tenha tenham tenhamos tenho terei teremos teria teriam terá terão teríamos teu teus teve tinha tinham tive tivemos tiver tivera tiveram tiverem tivermos tivesse tivessem tivéramos tivéssemos tu tua tuas tém tínhamos um uma você vocês vos à às éramos".split(" ")),e.Pipeline.registerFunction(e.pt.stopWordFilter,"stopWordFilter-pt")}});
+
+/**
+ * export the module via AMD, CommonJS or as a browser global
+ * Export code from https://github.com/umdjs/umd/blob/master/returnExports.js
+ */
+;
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(factory)
+  } else if (typeof exports === 'object') {
+    /**
+     * Node. Does not work with strict CommonJS, but
+     * only CommonJS-like environments that support module.exports,
+     * like Node.
+     */
+    module.exports = factory()
+  } else {
+    // Browser globals (root is window)
+    factory()(root.lunr);
+  }
+}(this, function() {
+  /**
+   * Just return a value to define the module export.
+   * This example returns an object, but the module
+   * can return a function as the exported value.
+   */
+  return function(lunr) {
+    /* throw error if lunr is not yet included */
+    if ('undefined' === typeof lunr) {
+      throw new Error('Lunr is not present. Please include / require Lunr before this script.');
+    }
+
+    /* throw error if lunr stemmer support is not yet included */
+    if ('undefined' === typeof lunr.stemmerSupport) {
+      throw new Error('Lunr stemmer support is not present. Please include / require Lunr stemmer support before this script.');
+    }
+
+    /* register specific locale function */
+    lunr.pt = function() {
+      this.pipeline.reset();
+      this.pipeline.add(
+        lunr.pt.trimmer,
+        lunr.pt.stopWordFilter,
+        lunr.pt.stemmer
+      );
+
+      // for lunr version 2
+      // this is necessary so that every searched word is also stemmed before
+      // in lunr <= 1 this is not needed, as it is done using the normal pipeline
+      if (this.searchPipeline) {
+        this.searchPipeline.reset();
+        this.searchPipeline.add(lunr.pt.stemmer)
+      }
+    };
+
+    /* lunr trimmer function */
+    lunr.pt.wordCharacters = "A-Za-z\xAA\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02B8\u02E0-\u02E4\u1D00-\u1D25\u1D2C-\u1D5C\u1D62-\u1D65\u1D6B-\u1D77\u1D79-\u1DBE\u1E00-\u1EFF\u2071\u207F\u2090-\u209C\u212A\u212B\u2132\u214E\u2160-\u2188\u2C60-\u2C7F\uA722-\uA787\uA78B-\uA7AD\uA7B0-\uA7B7\uA7F7-\uA7FF\uAB30-\uAB5A\uAB5C-\uAB64\uFB00-\uFB06\uFF21-\uFF3A\uFF41-\uFF5A";
+    lunr.pt.trimmer = lunr.trimmerSupport.generateTrimmer(lunr.pt.wordCharacters);
+
+    lunr.Pipeline.registerFunction(lunr.pt.trimmer, 'trimmer-pt');
+
+    /* lunr stemmer function */
+    lunr.pt.stemmer = (function() {
+      /* create the wrapped stemmer object */
+      var Among = lunr.stemmerSupport.Among,
+        SnowballProgram = lunr.stemmerSupport.SnowballProgram,
+        st = new function PortugueseStemmer() {
+          var a_0 = [new Among("", -1, 3), new Among("\u00E3", 0, 1),
+              new Among("\u00F5", 0, 2)
+            ],
+            a_1 = [new Among("", -1, 3),
+              new Among("a~", 0, 1), new Among("o~", 0, 2)
+            ],
+            a_2 = [
+              new Among("ic", -1, -1), new Among("ad", -1, -1),
+              new Among("os", -1, -1), new Among("iv", -1, 1)
+            ],
+            a_3 = [
+              new Among("ante", -1, 1), new Among("avel", -1, 1),
+              new Among("\u00EDvel", -1, 1)
+            ],
+            a_4 = [new Among("ic", -1, 1),
+              new Among("abil", -1, 1), new Among("iv", -1, 1)
+            ],
+            a_5 = [
+              new Among("ica", -1, 1), new Among("\u00E2ncia", -1, 1),
+              new Among("\u00EAncia", -1, 4), new Among("ira", -1, 9),
+              new Among("adora", -1, 1), new Among("osa", -1, 1),
+              new Among("ista", -1, 1), new Among("iva", -1, 8),
+              new Among("eza", -1, 1), new Among("log\u00EDa", -1, 2),
+              new Among("idade", -1, 7), new Among("ante", -1, 1),
+              new Among("mente", -1, 6), new Among("amente", 12, 5),
+              new Among("\u00E1vel", -1, 1), new Among("\u00EDvel", -1, 1),
+              new Among("uci\u00F3n", -1, 3), new Among("ico", -1, 1),
+              new Among("ismo", -1, 1), new Among("oso", -1, 1),
+              new Among("amento", -1, 1), new Among("imento", -1, 1),
+              new Among("ivo", -1, 8), new Among("a\u00E7a~o", -1, 1),
+              new Among("ador", -1, 1), new Among("icas", -1, 1),
+              new Among("\u00EAncias", -1, 4), new Among("iras", -1, 9),
+              new Among("adoras", -1, 1), new Among("osas", -1, 1),
+              new Among("istas", -1, 1), new Among("ivas", -1, 8),
+              new Among("ezas", -1, 1), new Among("log\u00EDas", -1, 2),
+              new Among("idades", -1, 7), new Among("uciones", -1, 3),
+              new Among("adores", -1, 1), new Among("antes", -1, 1),
+              new Among("a\u00E7o~es", -1, 1), new Among("icos", -1, 1),
+              new Among("ismos", -1, 1), new Among("osos", -1, 1),
+              new Among("amentos", -1, 1), new Among("imentos", -1, 1),
+              new Among("ivos", -1, 8)
+            ],
+            a_6 = [new Among("ada", -1, 1),
+              new Among("ida", -1, 1), new Among("ia", -1, 1),
+              new Among("aria", 2, 1), new Among("eria", 2, 1),
+              new Among("iria", 2, 1), new Among("ara", -1, 1),
+              new Among("era", -1, 1), new Among("ira", -1, 1),
+              new Among("ava", -1, 1), new Among("asse", -1, 1),
+              new Among("esse", -1, 1), new Among("isse", -1, 1),
+              new Among("aste", -1, 1), new Among("este", -1, 1),
+              new Among("iste", -1, 1), new Among("ei", -1, 1),
+              new Among("arei", 16, 1), new Among("erei", 16, 1),
+              new Among("irei", 16, 1), new Among("am", -1, 1),
+              new Among("iam", 20, 1), new Among("ariam", 21, 1),
+              new Among("eriam", 21, 1), new Among("iriam", 21, 1),
+              new Among("aram", 20, 1), new Among("eram", 20, 1),
+              new Among("iram", 20, 1), new Among("avam", 20, 1),
+              new Among("em", -1, 1), new Among("arem", 29, 1),
+              new Among("erem", 29, 1), new Among("irem", 29, 1),
+              new Among("assem", 29, 1), new Among("essem", 29, 1),
+              new Among("issem", 29, 1), new Among("ado", -1, 1),
+              new Among("ido", -1, 1), new Among("ando", -1, 1),
+              new Among("endo", -1, 1), new Among("indo", -1, 1),
+              new Among("ara~o", -1, 1), new Among("era~o", -1, 1),
+              new Among("ira~o", -1, 1), new Among("ar", -1, 1),
+              new Among("er", -1, 1), new Among("ir", -1, 1),
+              new Among("as", -1, 1), new Among("adas", 47, 1),
+              new Among("idas", 47, 1), new Among("ias", 47, 1),
+              new Among("arias", 50, 1), new Among("erias", 50, 1),
+              new Among("irias", 50, 1), new Among("aras", 47, 1),
+              new Among("eras", 47, 1), new Among("iras", 47, 1),
+              new Among("avas", 47, 1), new Among("es", -1, 1),
+              new Among("ardes", 58, 1), new Among("erdes", 58, 1),
+              new Among("irdes", 58, 1), new Among("ares", 58, 1),
+              new Among("eres", 58, 1), new Among("ires", 58, 1),
+              new Among("asses", 58, 1), new Among("esses", 58, 1),
+              new Among("isses", 58, 1), new Among("astes", 58, 1),
+              new Among("estes", 58, 1), new Among("istes", 58, 1),
+              new Among("is", -1, 1), new Among("ais", 71, 1),
+              new Among("eis", 71, 1), new Among("areis", 73, 1),
+              new Among("ereis", 73, 1), new Among("ireis", 73, 1),
+              new Among("\u00E1reis", 73, 1), new Among("\u00E9reis", 73, 1),
+              new Among("\u00EDreis", 73, 1), new Among("\u00E1sseis", 73, 1),
+              new Among("\u00E9sseis", 73, 1), new Among("\u00EDsseis", 73, 1),
+              new Among("\u00E1veis", 73, 1), new Among("\u00EDeis", 73, 1),
+              new Among("ar\u00EDeis", 84, 1), new Among("er\u00EDeis", 84, 1),
+              new Among("ir\u00EDeis", 84, 1), new Among("ados", -1, 1),
+              new Among("idos", -1, 1), new Among("amos", -1, 1),
+              new Among("\u00E1ramos", 90, 1), new Among("\u00E9ramos", 90, 1),
+              new Among("\u00EDramos", 90, 1), new Among("\u00E1vamos", 90, 1),
+              new Among("\u00EDamos", 90, 1), new Among("ar\u00EDamos", 95, 1),
+              new Among("er\u00EDamos", 95, 1), new Among("ir\u00EDamos", 95, 1),
+              new Among("emos", -1, 1), new Among("aremos", 99, 1),
+              new Among("eremos", 99, 1), new Among("iremos", 99, 1),
+              new Among("\u00E1ssemos", 99, 1), new Among("\u00EAssemos", 99, 1),
+              new Among("\u00EDssemos", 99, 1), new Among("imos", -1, 1),
+              new Among("armos", -1, 1), new Among("ermos", -1, 1),
+              new Among("irmos", -1, 1), new Among("\u00E1mos", -1, 1),
+              new Among("ar\u00E1s", -1, 1), new Among("er\u00E1s", -1, 1),
+              new Among("ir\u00E1s", -1, 1), new Among("eu", -1, 1),
+              new Among("iu", -1, 1), new Among("ou", -1, 1),
+              new Among("ar\u00E1", -1, 1), new Among("er\u00E1", -1, 1),
+              new Among("ir\u00E1", -1, 1)
+            ],
+            a_7 = [new Among("a", -1, 1),
+              new Among("i", -1, 1), new Among("o", -1, 1),
+              new Among("os", -1, 1), new Among("\u00E1", -1, 1),
+              new Among("\u00ED", -1, 1), new Among("\u00F3", -1, 1)
+            ],
+            a_8 = [
+              new Among("e", -1, 1), new Among("\u00E7", -1, 2),
+              new Among("\u00E9", -1, 1), new Among("\u00EA", -1, 1)
+            ],
+            g_v = [17,
+              65, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 19, 12, 2
+            ],
+            I_p2, I_p1, I_pV, sbp = new SnowballProgram();
+          this.setCurrent = function(word) {
+            sbp.setCurrent(word);
+          };
+          this.getCurrent = function() {
+            return sbp.getCurrent();
+          };
+
+          function r_prelude() {
+            var among_var;
+            while (true) {
+              sbp.bra = sbp.cursor;
+              among_var = sbp.find_among(a_0, 3);
+              if (among_var) {
+                sbp.ket = sbp.cursor;
+                switch (among_var) {
+                  case 1:
+                    sbp.slice_from("a~");
+                    continue;
+                  case 2:
+                    sbp.slice_from("o~");
+                    continue;
+                  case 3:
+                    if (sbp.cursor >= sbp.limit)
+                      break;
+                    sbp.cursor++;
+                    continue;
+                }
+              }
+              break;
+            }
+          }
+
+          function habr2() {
+            if (sbp.out_grouping(g_v, 97, 250)) {
+              while (!sbp.in_grouping(g_v, 97, 250)) {
+                if (sbp.cursor >= sbp.limit)
+                  return true;
+                sbp.cursor++;
+              }
+              return false;
+            }
+            return true;
+          }
+
+          function habr3() {
+            if (sbp.in_grouping(g_v, 97, 250)) {
+              while (!sbp.out_grouping(g_v, 97, 250)) {
+                if (sbp.cursor >= sbp.limit)
+                  return false;
+                sbp.cursor++;
+              }
+            }
+            I_pV = sbp.cursor;
+            return true;
+          }
+
+          function habr4() {
+            var v_1 = sbp.cursor,
+              v_2, v_3;
+            if (sbp.in_grouping(g_v, 97, 250)) {
+              v_2 = sbp.cursor;
+              if (habr2()) {
+                sbp.cursor = v_2;
+                if (habr3())
+                  return;
+              } else
+                I_pV = sbp.cursor;
+            }
+            sbp.cursor = v_1;
+            if (sbp.out_grouping(g_v, 97, 250)) {
+              v_3 = sbp.cursor;
+              if (habr2()) {
+                sbp.cursor = v_3;
+                if (!sbp.in_grouping(g_v, 97, 250) || sbp.cursor >= sbp.limit)
+                  return;
+                sbp.cursor++;
+              }
+              I_pV = sbp.cursor;
+            }
+          }
+
+          function habr5() {
+            while (!sbp.in_grouping(g_v, 97, 250)) {
+              if (sbp.cursor >= sbp.limit)
+                return false;
+              sbp.cursor++;
+            }
+            while (!sbp.out_grouping(g_v, 97, 250)) {
+              if (sbp.cursor >= sbp.limit)
+                return false;
+              sbp.cursor++;
+            }
+            return true;
+          }
+
+          function r_mark_regions() {
+            var v_1 = sbp.cursor;
+            I_pV = sbp.limit;
+            I_p1 = I_pV;
+            I_p2 = I_pV;
+            habr4();
+            sbp.cursor = v_1;
+            if (habr5()) {
+              I_p1 = sbp.cursor;
+              if (habr5())
+                I_p2 = sbp.cursor;
+            }
+          }
+
+          function r_postlude() {
+            var among_var;
+            while (true) {
+              sbp.bra = sbp.cursor;
+              among_var = sbp.find_among(a_1, 3);
+              if (among_var) {
+                sbp.ket = sbp.cursor;
+                switch (among_var) {
+                  case 1:
+                    sbp.slice_from("\u00E3");
+                    continue;
+                  case 2:
+                    sbp.slice_from("\u00F5");
+                    continue;
+                  case 3:
+                    if (sbp.cursor >= sbp.limit)
+                      break;
+                    sbp.cursor++;
+                    continue;
+                }
+              }
+              break;
+            }
+          }
+
+          function r_RV() {
+            return I_pV <= sbp.cursor;
+          }
+
+          function r_R1() {
+            return I_p1 <= sbp.cursor;
+          }
+
+          function r_R2() {
+            return I_p2 <= sbp.cursor;
+          }
+
+          function r_standard_suffix() {
+            var among_var;
+            sbp.ket = sbp.cursor;
+            among_var = sbp.find_among_b(a_5, 45);
+            if (!among_var)
+              return false;
+            sbp.bra = sbp.cursor;
+            switch (among_var) {
+              case 1:
+                if (!r_R2())
+                  return false;
+                sbp.slice_del();
+                break;
+              case 2:
+                if (!r_R2())
+                  return false;
+                sbp.slice_from("log");
+                break;
+              case 3:
+                if (!r_R2())
+                  return false;
+                sbp.slice_from("u");
+                break;
+              case 4:
+                if (!r_R2())
+                  return false;
+                sbp.slice_from("ente");
+                break;
+              case 5:
+                if (!r_R1())
+                  return false;
+                sbp.slice_del();
+                sbp.ket = sbp.cursor;
+                among_var = sbp.find_among_b(a_2, 4);
+                if (among_var) {
+                  sbp.bra = sbp.cursor;
+                  if (r_R2()) {
+                    sbp.slice_del();
+                    if (among_var == 1) {
+                      sbp.ket = sbp.cursor;
+                      if (sbp.eq_s_b(2, "at")) {
+                        sbp.bra = sbp.cursor;
+                        if (r_R2())
+                          sbp.slice_del();
+                      }
+                    }
+                  }
+                }
+                break;
+              case 6:
+                if (!r_R2())
+                  return false;
+                sbp.slice_del();
+                sbp.ket = sbp.cursor;
+                among_var = sbp.find_among_b(a_3, 3);
+                if (among_var) {
+                  sbp.bra = sbp.cursor;
+                  if (among_var == 1)
+                    if (r_R2())
+                      sbp.slice_del();
+                }
+                break;
+              case 7:
+                if (!r_R2())
+                  return false;
+                sbp.slice_del();
+                sbp.ket = sbp.cursor;
+                among_var = sbp.find_among_b(a_4, 3);
+                if (among_var) {
+                  sbp.bra = sbp.cursor;
+                  if (among_var == 1)
+                    if (r_R2())
+                      sbp.slice_del();
+                }
+                break;
+              case 8:
+                if (!r_R2())
+                  return false;
+                sbp.slice_del();
+                sbp.ket = sbp.cursor;
+                if (sbp.eq_s_b(2, "at")) {
+                  sbp.bra = sbp.cursor;
+                  if (r_R2())
+                    sbp.slice_del();
+                }
+                break;
+              case 9:
+                if (!r_RV() || !sbp.eq_s_b(1, "e"))
+                  return false;
+                sbp.slice_from("ir");
+                break;
+            }
+            return true;
+          }
+
+          function r_verb_suffix() {
+            var among_var, v_1;
+            if (sbp.cursor >= I_pV) {
+              v_1 = sbp.limit_backward;
+              sbp.limit_backward = I_pV;
+              sbp.ket = sbp.cursor;
+              among_var = sbp.find_among_b(a_6, 120);
+              if (among_var) {
+                sbp.bra = sbp.cursor;
+                if (among_var == 1)
+                  sbp.slice_del();
+                sbp.limit_backward = v_1;
+                return true;
+              }
+              sbp.limit_backward = v_1;
+            }
+            return false;
+          }
+
+          function r_residual_suffix() {
+            var among_var;
+            sbp.ket = sbp.cursor;
+            among_var = sbp.find_among_b(a_7, 7);
+            if (among_var) {
+              sbp.bra = sbp.cursor;
+              if (among_var == 1)
+                if (r_RV())
+                  sbp.slice_del();
+            }
+          }
+
+          function habr6(c1, c2) {
+            if (sbp.eq_s_b(1, c1)) {
+              sbp.bra = sbp.cursor;
+              var v_1 = sbp.limit - sbp.cursor;
+              if (sbp.eq_s_b(1, c2)) {
+                sbp.cursor = sbp.limit - v_1;
+                if (r_RV())
+                  sbp.slice_del();
+                return false;
+              }
+            }
+            return true;
+          }
+
+          function r_residual_form() {
+            var among_var, v_1, v_2, v_3;
+            sbp.ket = sbp.cursor;
+            among_var = sbp.find_among_b(a_8, 4);
+            if (among_var) {
+              sbp.bra = sbp.cursor;
+              switch (among_var) {
+                case 1:
+                  if (r_RV()) {
+                    sbp.slice_del();
+                    sbp.ket = sbp.cursor;
+                    v_1 = sbp.limit - sbp.cursor;
+                    if (habr6("u", "g"))
+                      habr6("i", "c")
+                  }
+                  break;
+                case 2:
+                  sbp.slice_from("c");
+                  break;
+              }
+            }
+          }
+
+          function habr1() {
+            if (!r_standard_suffix()) {
+              sbp.cursor = sbp.limit;
+              if (!r_verb_suffix()) {
+                sbp.cursor = sbp.limit;
+                r_residual_suffix();
+                return;
+              }
+            }
+            sbp.cursor = sbp.limit;
+            sbp.ket = sbp.cursor;
+            if (sbp.eq_s_b(1, "i")) {
+              sbp.bra = sbp.cursor;
+              if (sbp.eq_s_b(1, "c")) {
+                sbp.cursor = sbp.limit;
+                if (r_RV())
+                  sbp.slice_del();
+              }
+            }
+          }
+          this.stem = function() {
+            var v_1 = sbp.cursor;
+            r_prelude();
+            sbp.cursor = v_1;
+            r_mark_regions();
+            sbp.limit_backward = v_1;
+            sbp.cursor = sbp.limit;
+            habr1();
+            sbp.cursor = sbp.limit;
+            r_residual_form();
+            sbp.cursor = sbp.limit_backward;
+            r_postlude();
+            return true;
+          }
+        };
+
+      /* and return a function that stems a word for the current locale */
+      return function(token) {
+        // for lunr version 2
+        if (typeof token.update === "function") {
+          return token.update(function(word) {
+            st.setCurrent(word);
+            st.stem();
+            return st.getCurrent();
+          })
+        } else { // for lunr version <= 1
+          st.setCurrent(token);
+          st.stem();
+          return st.getCurrent();
+        }
+      }
+    })();
+
+    lunr.Pipeline.registerFunction(lunr.pt.stemmer, 'stemmer-pt');
+
+    lunr.pt.stopWordFilter = lunr.generateStopWordFilter('a ao aos aquela aquelas aquele aqueles aquilo as até com como da das de dela delas dele deles depois do dos e ela elas ele eles em entre era eram essa essas esse esses esta estamos estas estava estavam este esteja estejam estejamos estes esteve estive estivemos estiver estivera estiveram estiverem estivermos estivesse estivessem estivéramos estivéssemos estou está estávamos estão eu foi fomos for fora foram forem formos fosse fossem fui fôramos fôssemos haja hajam hajamos havemos hei houve houvemos houver houvera houveram houverei houverem houveremos houveria houveriam houvermos houverá houverão houveríamos houvesse houvessem houvéramos houvéssemos há hão isso isto já lhe lhes mais mas me mesmo meu meus minha minhas muito na nas nem no nos nossa nossas nosso nossos num numa não nós o os ou para pela pelas pelo pelos por qual quando que quem se seja sejam sejamos sem serei seremos seria seriam será serão seríamos seu seus somos sou sua suas são só também te tem temos tenha tenham tenhamos tenho terei teremos teria teriam terá terão teríamos teu teus teve tinha tinham tive tivemos tiver tivera tiveram tiverem tivermos tivesse tivessem tivéramos tivéssemos tu tua tuas tém tínhamos um uma você vocês vos à às éramos'.split(' '));
+
+    lunr.Pipeline.registerFunction(lunr.pt.stopWordFilter, 'stopWordFilter-pt');
+  };
+}))

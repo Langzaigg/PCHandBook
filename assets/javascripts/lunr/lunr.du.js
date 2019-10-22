@@ -14,4 +14,435 @@
  * Copyright 2010, Oleg Mazko
  * http://www.mozilla.org/MPL/
  */
-!function(e,r){"function"==typeof define&&define.amd?define(r):"object"==typeof exports?module.exports=r():r()(e.lunr)}(this,function(){return function(e){if(void 0===e)throw new Error("Lunr is not present. Please include / require Lunr before this script.");if(void 0===e.stemmerSupport)throw new Error("Lunr stemmer support is not present. Please include / require Lunr stemmer support before this script.");var v,q,r;console.warn('[Lunr Languages] Please use the "nl" instead of the "du". The "nl" code is the standard code for Dutch language, and "du" will be removed in the next major versions.'),e.du=function(){this.pipeline.reset(),this.pipeline.add(e.du.trimmer,e.du.stopWordFilter,e.du.stemmer),this.searchPipeline&&(this.searchPipeline.reset(),this.searchPipeline.add(e.du.stemmer))},e.du.wordCharacters="A-Za-zªºÀ-ÖØ-öø-ʸˠ-ˤᴀ-ᴥᴬ-ᵜᵢ-ᵥᵫ-ᵷᵹ-ᶾḀ-ỿⁱⁿₐ-ₜKÅℲⅎⅠ-ↈⱠ-ⱿꜢ-ꞇꞋ-ꞭꞰ-ꞷꟷ-ꟿꬰ-ꭚꭜ-ꭤﬀ-ﬆＡ-Ｚａ-ｚ",e.du.trimmer=e.trimmerSupport.generateTrimmer(e.du.wordCharacters),e.Pipeline.registerFunction(e.du.trimmer,"trimmer-du"),e.du.stemmer=(v=e.stemmerSupport.Among,q=e.stemmerSupport.SnowballProgram,r=new function(){var r,i,u,o=[new v("",-1,6),new v("á",0,1),new v("ä",0,1),new v("é",0,2),new v("ë",0,2),new v("í",0,3),new v("ï",0,3),new v("ó",0,4),new v("ö",0,4),new v("ú",0,5),new v("ü",0,5)],n=[new v("",-1,3),new v("I",0,2),new v("Y",0,1)],t=[new v("dd",-1,-1),new v("kk",-1,-1),new v("tt",-1,-1)],c=[new v("ene",-1,2),new v("se",-1,3),new v("en",-1,2),new v("heden",2,1),new v("s",-1,3)],a=[new v("end",-1,1),new v("ig",-1,2),new v("ing",-1,1),new v("lijk",-1,3),new v("baar",-1,4),new v("bar",-1,5)],l=[new v("aa",-1,-1),new v("ee",-1,-1),new v("oo",-1,-1),new v("uu",-1,-1)],m=[17,65,16,1,0,0,0,0,0,0,0,0,0,0,0,0,128],d=[1,0,0,17,65,16,1,0,0,0,0,0,0,0,0,0,0,0,0,128],f=[17,67,16,1,0,0,0,0,0,0,0,0,0,0,0,0,128],_=new q;function s(e){return(_.cursor=e)>=_.limit||(_.cursor++,!1)}function w(){for(;!_.in_grouping(m,97,232);){if(_.cursor>=_.limit)return!0;_.cursor++}for(;!_.out_grouping(m,97,232);){if(_.cursor>=_.limit)return!0;_.cursor++}return!1}function b(){return i<=_.cursor}function p(){return r<=_.cursor}function g(){var e=_.limit-_.cursor;_.find_among_b(t,3)&&(_.cursor=_.limit-e,_.ket=_.cursor,_.cursor>_.limit_backward&&(_.cursor--,_.bra=_.cursor,_.slice_del()))}function h(){var e;u=!1,_.ket=_.cursor,_.eq_s_b(1,"e")&&(_.bra=_.cursor,b()&&(e=_.limit-_.cursor,_.out_grouping_b(m,97,232)&&(_.cursor=_.limit-e,_.slice_del(),u=!0,g())))}function k(){var e;b()&&(e=_.limit-_.cursor,_.out_grouping_b(m,97,232)&&(_.cursor=_.limit-e,_.eq_s_b(3,"gem")||(_.cursor=_.limit-e,_.slice_del(),g())))}this.setCurrent=function(e){_.setCurrent(e)},this.getCurrent=function(){return _.getCurrent()},this.stem=function(){var e=_.cursor;return function(){for(var e,r,i,n=_.cursor;;){if(_.bra=_.cursor,e=_.find_among(o,11))switch(_.ket=_.cursor,e){case 1:_.slice_from("a");continue;case 2:_.slice_from("e");continue;case 3:_.slice_from("i");continue;case 4:_.slice_from("o");continue;case 5:_.slice_from("u");continue;case 6:if(_.cursor>=_.limit)break;_.cursor++;continue}break}for(_.cursor=n,_.bra=n,_.eq_s(1,"y")?(_.ket=_.cursor,_.slice_from("Y")):_.cursor=n;;)if(r=_.cursor,_.in_grouping(m,97,232)){if(i=_.cursor,_.bra=i,_.eq_s(1,"i"))_.ket=_.cursor,_.in_grouping(m,97,232)&&(_.slice_from("I"),_.cursor=r);else if(_.cursor=i,_.eq_s(1,"y"))_.ket=_.cursor,_.slice_from("Y"),_.cursor=r;else if(s(r))break}else if(s(r))break}(),_.cursor=e,i=_.limit,r=i,w()||((i=_.cursor)<3&&(i=3),w()||(r=_.cursor)),_.limit_backward=e,_.cursor=_.limit,function(){var e,r,i,n,o,t,s=_.limit-_.cursor;if(_.ket=_.cursor,e=_.find_among_b(c,5))switch(_.bra=_.cursor,e){case 1:b()&&_.slice_from("heid");break;case 2:k();break;case 3:b()&&_.out_grouping_b(f,97,232)&&_.slice_del()}if(_.cursor=_.limit-s,h(),_.cursor=_.limit-s,_.ket=_.cursor,_.eq_s_b(4,"heid")&&(_.bra=_.cursor,p()&&(r=_.limit-_.cursor,_.eq_s_b(1,"c")||(_.cursor=_.limit-r,_.slice_del(),_.ket=_.cursor,_.eq_s_b(2,"en")&&(_.bra=_.cursor,k())))),_.cursor=_.limit-s,_.ket=_.cursor,e=_.find_among_b(a,6))switch(_.bra=_.cursor,e){case 1:if(p()){if(_.slice_del(),i=_.limit-_.cursor,_.ket=_.cursor,_.eq_s_b(2,"ig")&&(_.bra=_.cursor,p()&&(n=_.limit-_.cursor,!_.eq_s_b(1,"e")))){_.cursor=_.limit-n,_.slice_del();break}_.cursor=_.limit-i,g()}break;case 2:p()&&(o=_.limit-_.cursor,_.eq_s_b(1,"e")||(_.cursor=_.limit-o,_.slice_del()));break;case 3:p()&&(_.slice_del(),h());break;case 4:p()&&_.slice_del();break;case 5:p()&&u&&_.slice_del()}_.cursor=_.limit-s,_.out_grouping_b(d,73,232)&&(t=_.limit-_.cursor,_.find_among_b(l,4)&&_.out_grouping_b(m,97,232)&&(_.cursor=_.limit-t,_.ket=_.cursor,_.cursor>_.limit_backward&&(_.cursor--,_.bra=_.cursor,_.slice_del())))}(),_.cursor=_.limit_backward,function(){for(var e;;)if(_.bra=_.cursor,e=_.find_among(n,3))switch(_.ket=_.cursor,e){case 1:_.slice_from("y");break;case 2:_.slice_from("i");break;case 3:if(_.cursor>=_.limit)return;_.cursor++}}(),!0}},function(e){return"function"==typeof e.update?e.update(function(e){return r.setCurrent(e),r.stem(),r.getCurrent()}):(r.setCurrent(e),r.stem(),r.getCurrent())}),e.Pipeline.registerFunction(e.du.stemmer,"stemmer-du"),e.du.stopWordFilter=e.generateStopWordFilter(" aan al alles als altijd andere ben bij daar dan dat de der deze die dit doch doen door dus een eens en er ge geen geweest haar had heb hebben heeft hem het hier hij hoe hun iemand iets ik in is ja je kan kon kunnen maar me meer men met mij mijn moet na naar niet niets nog nu of om omdat onder ons ook op over reeds te tegen toch toen tot u uit uw van veel voor want waren was wat werd wezen wie wil worden wordt zal ze zelf zich zij zijn zo zonder zou".split(" ")),e.Pipeline.registerFunction(e.du.stopWordFilter,"stopWordFilter-du")}});
+
+/**
+ * export the module via AMD, CommonJS or as a browser global
+ * Export code from https://github.com/umdjs/umd/blob/master/returnExports.js
+ */
+;
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(factory)
+  } else if (typeof exports === 'object') {
+    /**
+     * Node. Does not work with strict CommonJS, but
+     * only CommonJS-like environments that support module.exports,
+     * like Node.
+     */
+    module.exports = factory()
+  } else {
+    // Browser globals (root is window)
+    factory()(root.lunr);
+  }
+}(this, function() {
+  /**
+   * Just return a value to define the module export.
+   * This example returns an object, but the module
+   * can return a function as the exported value.
+   */
+  return function(lunr) {
+    /* throw error if lunr is not yet included */
+    if ('undefined' === typeof lunr) {
+      throw new Error('Lunr is not present. Please include / require Lunr before this script.');
+    }
+
+    /* throw error if lunr stemmer support is not yet included */
+    if ('undefined' === typeof lunr.stemmerSupport) {
+      throw new Error('Lunr stemmer support is not present. Please include / require Lunr stemmer support before this script.');
+    }
+
+    /* register specific locale function */
+    lunr.du = function() {
+      this.pipeline.reset();
+      this.pipeline.add(
+        lunr.du.trimmer,
+        lunr.du.stopWordFilter,
+        lunr.du.stemmer
+      );
+
+      // for lunr version 2
+      // this is necessary so that every searched word is also stemmed before
+      // in lunr <= 1 this is not needed, as it is done using the normal pipeline
+      if (this.searchPipeline) {
+        this.searchPipeline.reset();
+        this.searchPipeline.add(lunr.du.stemmer)
+      }
+    };
+
+    /* lunr trimmer function */
+    lunr.du.wordCharacters = "A-Za-z\xAA\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02B8\u02E0-\u02E4\u1D00-\u1D25\u1D2C-\u1D5C\u1D62-\u1D65\u1D6B-\u1D77\u1D79-\u1DBE\u1E00-\u1EFF\u2071\u207F\u2090-\u209C\u212A\u212B\u2132\u214E\u2160-\u2188\u2C60-\u2C7F\uA722-\uA787\uA78B-\uA7AD\uA7B0-\uA7B7\uA7F7-\uA7FF\uAB30-\uAB5A\uAB5C-\uAB64\uFB00-\uFB06\uFF21-\uFF3A\uFF41-\uFF5A";
+    lunr.du.trimmer = lunr.trimmerSupport.generateTrimmer(lunr.du.wordCharacters);
+
+    lunr.Pipeline.registerFunction(lunr.du.trimmer, 'trimmer-du');
+
+    /* lunr stemmer function */
+    lunr.du.stemmer = (function() {
+      /* create the wrapped stemmer object */
+      var Among = lunr.stemmerSupport.Among,
+        SnowballProgram = lunr.stemmerSupport.SnowballProgram,
+        st = new function DutchStemmer() {
+          var a_0 = [new Among("", -1, 6), new Among("\u00E1", 0, 1),
+              new Among("\u00E4", 0, 1), new Among("\u00E9", 0, 2),
+              new Among("\u00EB", 0, 2), new Among("\u00ED", 0, 3),
+              new Among("\u00EF", 0, 3), new Among("\u00F3", 0, 4),
+              new Among("\u00F6", 0, 4), new Among("\u00FA", 0, 5),
+              new Among("\u00FC", 0, 5)
+            ],
+            a_1 = [new Among("", -1, 3),
+              new Among("I", 0, 2), new Among("Y", 0, 1)
+            ],
+            a_2 = [
+              new Among("dd", -1, -1), new Among("kk", -1, -1),
+              new Among("tt", -1, -1)
+            ],
+            a_3 = [new Among("ene", -1, 2),
+              new Among("se", -1, 3), new Among("en", -1, 2),
+              new Among("heden", 2, 1), new Among("s", -1, 3)
+            ],
+            a_4 = [
+              new Among("end", -1, 1), new Among("ig", -1, 2),
+              new Among("ing", -1, 1), new Among("lijk", -1, 3),
+              new Among("baar", -1, 4), new Among("bar", -1, 5)
+            ],
+            a_5 = [
+              new Among("aa", -1, -1), new Among("ee", -1, -1),
+              new Among("oo", -1, -1), new Among("uu", -1, -1)
+            ],
+            g_v = [17, 65,
+              16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128
+            ],
+            g_v_I = [1, 0, 0,
+              17, 65, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128
+            ],
+            g_v_j = [
+              17, 67, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128
+            ],
+            I_p2, I_p1, B_e_found, sbp = new SnowballProgram();
+          this.setCurrent = function(word) {
+            sbp.setCurrent(word);
+          };
+          this.getCurrent = function() {
+            return sbp.getCurrent();
+          };
+
+          function r_prelude() {
+            var among_var, v_1 = sbp.cursor,
+              v_2, v_3;
+            while (true) {
+              sbp.bra = sbp.cursor;
+              among_var = sbp.find_among(a_0, 11);
+              if (among_var) {
+                sbp.ket = sbp.cursor;
+                switch (among_var) {
+                  case 1:
+                    sbp.slice_from("a");
+                    continue;
+                  case 2:
+                    sbp.slice_from("e");
+                    continue;
+                  case 3:
+                    sbp.slice_from("i");
+                    continue;
+                  case 4:
+                    sbp.slice_from("o");
+                    continue;
+                  case 5:
+                    sbp.slice_from("u");
+                    continue;
+                  case 6:
+                    if (sbp.cursor >= sbp.limit)
+                      break;
+                    sbp.cursor++;
+                    continue;
+                }
+              }
+              break;
+            }
+            sbp.cursor = v_1;
+            sbp.bra = v_1;
+            if (sbp.eq_s(1, "y")) {
+              sbp.ket = sbp.cursor;
+              sbp.slice_from("Y");
+            } else
+              sbp.cursor = v_1;
+            while (true) {
+              v_2 = sbp.cursor;
+              if (sbp.in_grouping(g_v, 97, 232)) {
+                v_3 = sbp.cursor;
+                sbp.bra = v_3;
+                if (sbp.eq_s(1, "i")) {
+                  sbp.ket = sbp.cursor;
+                  if (sbp.in_grouping(g_v, 97, 232)) {
+                    sbp.slice_from("I");
+                    sbp.cursor = v_2;
+                  }
+                } else {
+                  sbp.cursor = v_3;
+                  if (sbp.eq_s(1, "y")) {
+                    sbp.ket = sbp.cursor;
+                    sbp.slice_from("Y");
+                    sbp.cursor = v_2;
+                  } else if (habr1(v_2))
+                    break;
+                }
+              } else if (habr1(v_2))
+                break;
+            }
+          }
+
+          function habr1(v_1) {
+            sbp.cursor = v_1;
+            if (v_1 >= sbp.limit)
+              return true;
+            sbp.cursor++;
+            return false;
+          }
+
+          function r_mark_regions() {
+            I_p1 = sbp.limit;
+            I_p2 = I_p1;
+            if (!habr2()) {
+              I_p1 = sbp.cursor;
+              if (I_p1 < 3)
+                I_p1 = 3;
+              if (!habr2())
+                I_p2 = sbp.cursor;
+            }
+          }
+
+          function habr2() {
+            while (!sbp.in_grouping(g_v, 97, 232)) {
+              if (sbp.cursor >= sbp.limit)
+                return true;
+              sbp.cursor++;
+            }
+            while (!sbp.out_grouping(g_v, 97, 232)) {
+              if (sbp.cursor >= sbp.limit)
+                return true;
+              sbp.cursor++;
+            }
+            return false;
+          }
+
+          function r_postlude() {
+            var among_var;
+            while (true) {
+              sbp.bra = sbp.cursor;
+              among_var = sbp.find_among(a_1, 3);
+              if (among_var) {
+                sbp.ket = sbp.cursor;
+                switch (among_var) {
+                  case 1:
+                    sbp.slice_from("y");
+                    break;
+                  case 2:
+                    sbp.slice_from("i");
+                    break;
+                  case 3:
+                    if (sbp.cursor >= sbp.limit)
+                      return;
+                    sbp.cursor++;
+                    break;
+                }
+              }
+            }
+          }
+
+          function r_R1() {
+            return I_p1 <= sbp.cursor;
+          }
+
+          function r_R2() {
+            return I_p2 <= sbp.cursor;
+          }
+
+          function r_undouble() {
+            var v_1 = sbp.limit - sbp.cursor;
+            if (sbp.find_among_b(a_2, 3)) {
+              sbp.cursor = sbp.limit - v_1;
+              sbp.ket = sbp.cursor;
+              if (sbp.cursor > sbp.limit_backward) {
+                sbp.cursor--;
+                sbp.bra = sbp.cursor;
+                sbp.slice_del();
+              }
+            }
+          }
+
+          function r_e_ending() {
+            var v_1;
+            B_e_found = false;
+            sbp.ket = sbp.cursor;
+            if (sbp.eq_s_b(1, "e")) {
+              sbp.bra = sbp.cursor;
+              if (r_R1()) {
+                v_1 = sbp.limit - sbp.cursor;
+                if (sbp.out_grouping_b(g_v, 97, 232)) {
+                  sbp.cursor = sbp.limit - v_1;
+                  sbp.slice_del();
+                  B_e_found = true;
+                  r_undouble();
+                }
+              }
+            }
+          }
+
+          function r_en_ending() {
+            var v_1;
+            if (r_R1()) {
+              v_1 = sbp.limit - sbp.cursor;
+              if (sbp.out_grouping_b(g_v, 97, 232)) {
+                sbp.cursor = sbp.limit - v_1;
+                if (!sbp.eq_s_b(3, "gem")) {
+                  sbp.cursor = sbp.limit - v_1;
+                  sbp.slice_del();
+                  r_undouble();
+                }
+              }
+            }
+          }
+
+          function r_standard_suffix() {
+            var among_var, v_1 = sbp.limit - sbp.cursor,
+              v_2, v_3, v_4, v_5, v_6;
+            sbp.ket = sbp.cursor;
+            among_var = sbp.find_among_b(a_3, 5);
+            if (among_var) {
+              sbp.bra = sbp.cursor;
+              switch (among_var) {
+                case 1:
+                  if (r_R1())
+                    sbp.slice_from("heid");
+                  break;
+                case 2:
+                  r_en_ending();
+                  break;
+                case 3:
+                  if (r_R1() && sbp.out_grouping_b(g_v_j, 97, 232))
+                    sbp.slice_del();
+                  break;
+              }
+            }
+            sbp.cursor = sbp.limit - v_1;
+            r_e_ending();
+            sbp.cursor = sbp.limit - v_1;
+            sbp.ket = sbp.cursor;
+            if (sbp.eq_s_b(4, "heid")) {
+              sbp.bra = sbp.cursor;
+              if (r_R2()) {
+                v_2 = sbp.limit - sbp.cursor;
+                if (!sbp.eq_s_b(1, "c")) {
+                  sbp.cursor = sbp.limit - v_2;
+                  sbp.slice_del();
+                  sbp.ket = sbp.cursor;
+                  if (sbp.eq_s_b(2, "en")) {
+                    sbp.bra = sbp.cursor;
+                    r_en_ending();
+                  }
+                }
+              }
+            }
+            sbp.cursor = sbp.limit - v_1;
+            sbp.ket = sbp.cursor;
+            among_var = sbp.find_among_b(a_4, 6);
+            if (among_var) {
+              sbp.bra = sbp.cursor;
+              switch (among_var) {
+                case 1:
+                  if (r_R2()) {
+                    sbp.slice_del();
+                    v_3 = sbp.limit - sbp.cursor;
+                    sbp.ket = sbp.cursor;
+                    if (sbp.eq_s_b(2, "ig")) {
+                      sbp.bra = sbp.cursor;
+                      if (r_R2()) {
+                        v_4 = sbp.limit - sbp.cursor;
+                        if (!sbp.eq_s_b(1, "e")) {
+                          sbp.cursor = sbp.limit - v_4;
+                          sbp.slice_del();
+                          break;
+                        }
+                      }
+                    }
+                    sbp.cursor = sbp.limit - v_3;
+                    r_undouble();
+                  }
+                  break;
+                case 2:
+                  if (r_R2()) {
+                    v_5 = sbp.limit - sbp.cursor;
+                    if (!sbp.eq_s_b(1, "e")) {
+                      sbp.cursor = sbp.limit - v_5;
+                      sbp.slice_del();
+                    }
+                  }
+                  break;
+                case 3:
+                  if (r_R2()) {
+                    sbp.slice_del();
+                    r_e_ending();
+                  }
+                  break;
+                case 4:
+                  if (r_R2())
+                    sbp.slice_del();
+                  break;
+                case 5:
+                  if (r_R2() && B_e_found)
+                    sbp.slice_del();
+                  break;
+              }
+            }
+            sbp.cursor = sbp.limit - v_1;
+            if (sbp.out_grouping_b(g_v_I, 73, 232)) {
+              v_6 = sbp.limit - sbp.cursor;
+              if (sbp.find_among_b(a_5, 4) && sbp.out_grouping_b(g_v, 97, 232)) {
+                sbp.cursor = sbp.limit - v_6;
+                sbp.ket = sbp.cursor;
+                if (sbp.cursor > sbp.limit_backward) {
+                  sbp.cursor--;
+                  sbp.bra = sbp.cursor;
+                  sbp.slice_del();
+                }
+              }
+            }
+          }
+          this.stem = function() {
+            var v_1 = sbp.cursor;
+            r_prelude();
+            sbp.cursor = v_1;
+            r_mark_regions();
+            sbp.limit_backward = v_1;
+            sbp.cursor = sbp.limit;
+            r_standard_suffix();
+            sbp.cursor = sbp.limit_backward;
+            r_postlude();
+            return true;
+          }
+        };
+
+      /* and return a function that stems a word for the current locale */
+      return function(token) {
+        // for lunr version 2
+        if (typeof token.update === "function") {
+          return token.update(function(word) {
+            st.setCurrent(word);
+            st.stem();
+            return st.getCurrent();
+          })
+        } else { // for lunr version <= 1
+          st.setCurrent(token);
+          st.stem();
+          return st.getCurrent();
+        }
+      }
+    })();
+
+    lunr.Pipeline.registerFunction(lunr.du.stemmer, 'stemmer-du');
+
+    lunr.du.stopWordFilter = lunr.generateStopWordFilter(' aan al alles als altijd andere ben bij daar dan dat de der deze die dit doch doen door dus een eens en er ge geen geweest haar had heb hebben heeft hem het hier hij hoe hun iemand iets ik in is ja je kan kon kunnen maar me meer men met mij mijn moet na naar niet niets nog nu of om omdat onder ons ook op over reeds te tegen toch toen tot u uit uw van veel voor want waren was wat werd wezen wie wil worden wordt zal ze zelf zich zij zijn zo zonder zou'.split(' '));
+
+    lunr.Pipeline.registerFunction(lunr.du.stopWordFilter, 'stopWordFilter-du');
+  };
+}))
